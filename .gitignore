@@ -53,3 +53,5 @@ dist-ssr
 .vscode
 *.swp
 *.swo
+
+.vercel
