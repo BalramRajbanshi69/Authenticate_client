@@ -25,14 +25,19 @@ const Navbar = () => {
     toast.success("LoggedOut successfully!")
     navigate("/login")
   }
+
+  const handleAuthentication = ()=>{
+    localStorage.removeItem("token")
+    navigate("/login")
+  }
   return (
     <div className='fixed top-0 left-0 w-full z-50'>
         <div className='bg-gradient-to-r from-[#2A7B9B] via-[#57C785] to-[#EDDD53] shadow-lg'>
             <div className='max-w-7xl mx-auto px-4'>
                 <nav className='flex justify-between items-center py-4 md:py-6'>
-                    <Link to="/" className='text-white text-xl md:text-2xl font-bold cursor-pointer transition-all duration-300 hover:scale-105'>
+                    <button onClick={handleAuthentication} className='text-white text-xl md:text-2xl font-bold cursor-pointer transition-all duration-300 hover:scale-105'>
                         Authentication
-                    </Link>
+                    </button>
 
 
                           {/* Login/Logout with Dropdown */}
